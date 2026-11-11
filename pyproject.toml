@@ -12,10 +12,3 @@ dependencies = [
     "langchain-openai>=1.7.4",
     "python-dotenv>=1.2.4",
 ]
-
-[project.scripts]
-curso-langchain = "curso_langchain:main"
-
-[build-system]
-requires = ["uv_build>=0.13.7,<0.14.0"]
-build-backend = "uv_build"
