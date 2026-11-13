@@ -5,23 +5,11 @@ from langchain.agents import create_agent
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
-
-@tool
-def search(query: str) -> str:
-    """
-    Ferramenta que faz buscas na Internet
-    Args:
-        query: O que será pesquisado
-    Returns
-        O Resultado da Busca
-    """ 
-    print(f"Pesquise por {query}")
-    return "O tempo em Tóquio está ensolarado"
+from langchain_tavily import TavilySearch
 
 llm = ChatOpenAI(model="gpt-4o-mini")
-tools = [search]
+tools = [TavilySearch()]
 agent = create_agent(model=llm,tools=tools)
-
 
 def main():
     print ("Hello from Curso_LangChain!")
